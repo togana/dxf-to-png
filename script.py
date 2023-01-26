@@ -18,6 +18,7 @@ def convert_dxf_to_png(input, output):
     raise dxf_structure_error
 
   if not auditor.has_errors:
+    ezdxf.addons.drawing.properties.MODEL_SPACE_BG_COLOR = "#00000000"
     matplotlib.qsave(dxf.modelspace(), output)
 
 if __name__ == '__main__':
